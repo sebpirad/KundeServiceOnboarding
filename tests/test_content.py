@@ -11,7 +11,12 @@ def test_seven_phases() -> None:
 
 
 def test_total_items() -> None:
-    assert content.total_items() == 33
+    assert content.total_items() == 43
+
+
+def test_phase_item_distribution() -> None:
+    counts = [len(p["items"]) for p in content.build_phases()]
+    assert counts == [7, 14, 4, 10, 1, 4, 3]
 
 
 def test_item_keys_unique_and_stable() -> None:

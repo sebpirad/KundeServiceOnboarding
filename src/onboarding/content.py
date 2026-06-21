@@ -9,13 +9,15 @@ from __future__ import annotations
 
 from typing import Any
 
+LOOM = "https://www.loom.com/share/"
+
 # Phases. ``icon`` is either a filename under static/icons or the literal
 # "audio" (rendered as an inline waveform glyph by the frontend).
 PHASES: list[dict[str, Any]] = [
     {
         "id": "phase-1",
         "num": 1,
-        "kicker": "Dag 1 · Søndag",
+        "kicker": "Søndag d. 21/6",
         "title": "Kom i gang",
         "icon": "settings.svg",
         "purpose": (
@@ -32,11 +34,11 @@ PHASES: list[dict[str, Any]] = [
             {"type": "task", "title": "Adgang til interne systemer & CRM",
              "desc": "Så du kan følge sager fra start til slut."},
             {"type": "task", "title": "Kalender + delte mapper/drev",
-             "desc": "Del og find dokumenter med resten af holdet."},
-            {"type": "task", "title": "Adgang til løn-ark + sygdomsark",
-             "desc": "Under 8 ugers ansættelse — til afstemning senere på ugen."},
-            {"type": "task", "title": "Intro-møde med Sebastian (SP) + LS",
+             "desc": "Del og find dokumenter med resten af holdet. (MT sætter op)"},
+            {"type": "task", "title": "Møde med ejerne — Sebastian (SP) + LS",
              "desc": "Forretningsmodel, vision og hvor vi er på vej hen."},
+            {"type": "task", "title": "Adgang til ark — løn-ark + sygdoms-ark",
+             "desc": "Under 8 ugers ansættelse. (MT sætter op)"},
         ],
     },
     {
@@ -47,26 +49,53 @@ PHASES: list[dict[str, Any]] = [
         "nav_title": "Lær platformen",
         "icon": "dashboard.svg",
         "purpose": (
-            "Korte videogennemgange af de værktøjer du skal mestre. "
+            "Korte videogennemgange af de værktøjer og processer du skal mestre. "
             "Se dem i ro — du kan altid spole tilbage."
         ),
         "items": [
             {"type": "video", "title": "Introduktion til app.powermatch",
              "desc": "Det store overblik over platformen.",
-             "url": "https://www.loom.com/share/3c37e86da0e7403294c02db902165025"},
+             "url": LOOM + "3c37e86da0e7403294c02db902165025"},
+            {"type": "video", "title": "Ansøger — introduktion",
+             "desc": "Hvem ansøgerne er, og hvordan de kommer ind.",
+             "url": LOOM + "e0392ecabfb4457f83428f12ced531c8"},
+            {"type": "video", "title": "Ansøger-status forklaret",
+             "desc": "Hvad de forskellige statusser betyder.",
+             "url": LOOM + "5e664ff87db848dd8a1987d64f27ba95"},
+            {"type": "video", "title": "Kandidat — introduktion",
+             "desc": "Fra ansøger til kandidat — hele overgangen.",
+             "url": LOOM + "764e2dad788b41149a976787ce5ebac8"},
+            {"type": "video", "title": "Virksomheds-introduktion",
+             "desc": "Hvordan vi arbejder med virksomhederne.",
+             "url": LOOM + "3eb6e2527a434474b7dd8abe98a038fe"},
+            {"type": "video", "title": "Job-opsalg",
+             "desc": "Sådan sælger vi jobbet ind.",
+             "url": LOOM + "cd15755f186c400b91b4a88cac2ee1dc"},
+            {"type": "video", "title": "Matching-processen",
+             "desc": "Sådan matcher vi kandidat og virksomhed.",
+             "url": LOOM + "64a908665a3f46d48822535aeb4003e4"},
+            {"type": "video", "title": "Self-service",
+             "desc": "Hvad kunderne selv kan klare i platformen.",
+             "url": LOOM + "10e55fd49ebc4ee59cb5bd0e76779987"},
             {"type": "video", "title": "Opfølgning på kontrakter",
              "desc": "Sådan holder du styr på igangværende aftaler.",
-             "url": "https://www.loom.com/share/1b7f694981d34afdbad67db23a39c520"},
+             "url": LOOM + "1b7f694981d34afdbad67db23a39c520"},
+            {"type": "video", "title": "Utilfredse kandidater — fastholdelse",
+             "desc": "Hvordan vi vender en utilfreds kandidat.",
+             "url": LOOM + "cce7eaef85d14765b6642f711fe98f16"},
             {"type": "video", "title": "Tidsregistrering",
              "desc": "Hvordan timer registreres og godkendes.",
-             "url": "https://www.loom.com/share/b62533734eb7472098ac99af389f2a50"},
-            {"type": "video", "title": "Powerlink — lead til sælgere + screenere",
-             "desc": "Sådan flyder leads gennem systemet.",
-             "url": "https://www.loom.com/share/abe23ef6eb2a41f9b3fc0de239866fed"},
+             "url": LOOM + "b62533734eb7472098ac99af389f2a50"},
             {"type": "video", "title": "Love calls",
              "desc": "Se FØRST efter din live-oplæring i Adversus.",
              "time": "Efter live-oplæring",
-             "url": "https://www.loom.com/share/c338d509c3954252bbbf6aa57109343f"},
+             "url": LOOM + "c338d509c3954252bbbf6aa57109343f"},
+            {"type": "video", "title": "Hvornår opsiger PowerMatch kandidater?",
+             "desc": "Kriterier og proces for opsigelse.",
+             "url": LOOM + "48bfb46f492349a9956cb26d5ceb9cb2"},
+            {"type": "video", "title": "Powerlink — lead til sælgere + screenere",
+             "desc": "Sådan flyder leads gennem systemet.",
+             "url": LOOM + "abe23ef6eb2a41f9b3fc0de239866fed"},
         ],
     },
     {
@@ -89,7 +118,7 @@ PHASES: list[dict[str, Any]] = [
             {"type": "doc", "title": "Overenskomster & fagforeninger",
              "desc": "Dybdegående gennemgang.",
              "url": "https://docs.google.com/document/d/1dpM7TJpRrdLwZnm1FVs47Qq_YQverAwQpQBBQhxHKww/edit"},
-            {"type": "doc", "title": "Teamet og opgaverne",
+            {"type": "doc", "title": "Teamet og deres roller",
              "desc": "Hvem gør hvad — og hvem du går til med hvad.",
              "url": "https://docs.google.com/document/d/1xSncDjCUACxRjH0xx4rMUrzY0l35nXW0ZmjeosUTM7w/edit"},
         ],
@@ -101,8 +130,8 @@ PHASES: list[dict[str, Any]] = [
         "title": "Forretningen i dybden",
         "icon": "briefcase.svg",
         "purpose": (
-            "Live gennemgang med din oplærer. Stil spørgsmål, tag noter — "
-            "det her er kernen i jobbet."
+            "Live gennemgang med din oplærer. Stil spørgsmål og tag noter "
+            "i dit arbejdsområde nedenfor — det her er kernen i jobbet."
         ),
         # The 1:1 workspace (links + free-form notes) is enabled for this phase.
         "workspace": True,
@@ -110,20 +139,22 @@ PHASES: list[dict[str, Any]] = [
             {"type": "task", "title": "Forretningsmodellen",
              "desc": "Try & hire, handelsbetingelser, kandidatens og virksomhedens vilkår."},
             {"type": "task", "title": "Virksomhederne",
-             "desc": "Hvem er de, hvordan får vi dem ind, processen A–Z, og fastholdelse."},
+             "desc": "Hvem de er, hvordan vi får dem ind, processen A–Z, og fastholdelse."},
             {"type": "task", "title": "Ansøgerne",
-             "desc": "Hvem er de, hvordan får vi dem ind, og hvordan vi holder dem engagerede."},
+             "desc": "Hvem de er, hvordan vi får dem ind, og hvordan vi holder dem engagerede."},
             {"type": "task", "title": "Kandidaterne",
              "desc": "Hele rejsen A–Z, og hvorfor de vælger PowerMatch."},
-            {"type": "task", "title": "Adversus — introduktion & emnebehandling",
-             "desc": "Sådan arbejder du struktureret i opkaldsplatformen."},
+            {"type": "task", "title": "Adversus — introduktion",
+             "desc": "Sådan kommer du i gang i opkaldsplatformen."},
+            {"type": "task", "title": "Emnebehandling i Adversus",
+             "desc": "Sådan arbejder du struktureret med emner."},
             {"type": "task", "title": "Love calls-kampagne i Adversus",
              "desc": "Den praktiske opsætning og afvikling."},
             {"type": "task", "title": "Intern kommunikation",
              "desc": "Hvor og hvordan vi taler sammen i hverdagen."},
             {"type": "task", "title": "Opsigelser i app.powermatch",
              "desc": "Den korrekte proces, trin for trin."},
-            {"type": "task", "title": "Lønperiode — løn-ark + sygdomsark",
+            {"type": "task", "title": "Lønperiode — løn-ark + sygdoms-ark",
              "desc": "Gennemgang onsdag/torsdag."},
         ],
     },
@@ -182,11 +213,11 @@ PHASES: list[dict[str, Any]] = [
             "gradvist dine egne opkald med supervision."
         ),
         "items": [
-            {"type": "live", "title": "Onsdag: Shadowing af Michelle",
+            {"type": "live", "title": "Onsdag d. 24/6: Shadowing af Michelle",
              "desc": "Se hvordan en erfaren kollega arbejder + afstem løn-ark sammen."},
-            {"type": "live", "title": "Torsdag: Shadowing + dine første indgående opkald",
+            {"type": "live", "title": "Torsdag d. 25/6: Shadowing + dine første indgående opkald",
              "desc": "Du tager opkald med supervision tæt på."},
-            {"type": "live", "title": "Fredag: Indgående opkald med supervision",
+            {"type": "live", "title": "Fredag d. 26/6: Indgående opkald med supervision",
              "desc": "Mulig afprøvning af opfølgning på kontrakter på egen hånd."},
         ],
     },
@@ -201,7 +232,7 @@ TIPS: dict[str, dict[str, str]] = {
     "phase-3": {"label": "Selvstudie",
                 "text": "Tag det i dit tempo — fundamentet her gør dine samtaler skarpere."},
     "phase-4": {"label": "1-1 med din oplærer",
-                "text": "Stil spørgsmål og tag noter. Det her er kernen i jobbet."},
+                "text": "Stil spørgsmål og skriv dine noter i arbejdsområdet. Det her er kernen i jobbet."},
     "phase-5": {"label": "Lyt efter",
                 "text": "Tone, struktur og hvordan vi håndterer indvendinger."},
     "phase-6": {"label": "Opslagsværk",
