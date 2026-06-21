@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ app_name }} — Kundeservice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="app">
+  <!-- ============ RAIL ============ -->
+  <aside class="rail">
+    <div class="brand" id="brand">
+      <svg class="mark" viewBox="0 0 17 18" fill="none"><path d="M16.732 10.9618C16.732 14.573 13.8503 17.5 10.296 17.5C6.74267 17.5 3.86091 14.5721 3.86091 10.9618H3.86176C3.86091 8.79459 2.13219 4.45669 0 4.45669V4.42535C3.55423 4.42535 6.43599 7.35153 6.43599 10.9627H6.43513C6.43599 13.129 8.16384 14.8845 10.296 14.8845C12.4291 14.8845 14.1578 13.1281 14.1578 10.9618C14.1578 8.79546 12.4291 7.03906 10.2969 7.03906V7.03819C6.74267 7.03819 3.86176 4.11115 3.86176 0.5H3.8926C3.8926 2.66721 8.16384 4.42274 10.2969 4.42274V4.42361C13.8511 4.42361 16.732 7.35066 16.732 10.9618Z" fill="#F8E965"/></svg>
+      <span class="word">power<b>match</b></span>
+    </div>
+
+    <div class="rail-prog" id="railProg">
+      <div class="top">
+        <span class="lbl">Din fremgang</span>
+        <span class="pct"><span id="railPct">0</span><small>%</small></span>
+      </div>
+      <div class="track"><i id="railBar"></i></div>
+      <div class="meta" id="railMeta">0 af 0 trin</div>
+    </div>
+
+    <div class="rail-label">Onboarding · Kundeservice</div>
+    <div class="steps" id="steps"></div>
+
+    <div class="rail-links">
+      <button class="rail-link" id="myNotesLink" type="button">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+        <b>Mine noter</b><span class="badge-n" id="notesBadge">0</span>
+      </button>
+    </div>
+
+    <div class="rail-foot">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div><b>Sidder du fast?</b><span>Spørg din oplærer — det forventes.</span></div>
+    </div>
+  </aside>
+
+  <!-- ============ WORK ============ -->
+  <div class="work">
+    <div class="work-scroll" id="workScroll">
+      <!-- WELCOME -->
+      <section class="screen welcome" id="screen-welcome">
+        <div class="canvas">
+          <div class="wc-eyebrow"><span class="d"></span>Velkommen til holdet</div>
+          <h1>Din første uge hos PowerMatch.<br>Struktureret, så du lykkes.</h1>
+          <p class="lead">Syv faser tager dig fra første login til dine egne opkald på telefonen. Én fase ad gangen — alt gemmes, så du kan stoppe og fortsætte når som helst.</p>
+          <div class="wc-stats">
+            <div class="wc-stat"><b>~1 uge</b><span>fra start til selvkørende</span></div>
+            <div class="wc-stat"><b>7 faser</b><span>i et fast forløb</span></div>
+            <div class="wc-stat"><b>5 videoer</b><span>+ læsestof &amp; 1-1</span></div>
+            <div class="wc-stat"><b>{{ total }}</b><span>konkrete trin</span></div>
+          </div>
+          <div class="week">
+            <div class="day"><div class="dl">Søn</div><div class="db"></div><div class="dt">Opstart &amp; adgange</div></div>
+            <div class="day"><div class="dl">Man</div><div class="db"></div><div class="dt">Platform &amp; værktøjer</div></div>
+            <div class="day"><div class="dl">Tir</div><div class="db"></div><div class="dt">Branche &amp; teori</div></div>
+            <div class="day"><div class="dl">Ons</div><div class="db"></div><div class="dt">Shadowing</div></div>
+            <div class="day"><div class="dl">Tor</div><div class="db"></div><div class="dt">Egne opkald</div></div>
+            <div class="day"><div class="dl">Fre</div><div class="db"></div><div class="dt">Supervision</div></div>
+          </div>
+          <div class="wc-cta">
+            <button class="btn btn-primary" id="startBtn">
+              <span id="startLabel">Start onboarding</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <span style="font-size:13px;color:var(--muted)" id="startSub">Intet er låst — du styrer tempoet.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHASES injected here -->
+      <div id="phaseMount"></div>
+
+      <!-- MY NOTES -->
+      <section class="screen notes-s" id="screen-notes">
+        <div class="canvas">
+          <div class="notes-head">
+            <div class="meta">
+              <h1>Mine noter</h1>
+              <div class="sub">Alt du har skrevet undervejs, samlet og grupperet pr. fase. Gemmes på denne enhed.</div>
+            </div>
+          </div>
+          <div class="notes-actions">
+            <button class="btn btn-ghost" id="printNotesBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print / gem som PDF
+            </button>
+            <button class="btn btn-ghost" id="backFromNotesBtn">Tilbage til forløbet</button>
+          </div>
+          <div id="notesBody"></div>
+        </div>
+      </section>
+
+      <!-- DONE -->
+      <section class="screen done-s" id="screen-done">
+        <div class="canvas">
+          <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h1>Du er klar!</h1>
+          <p>Du har gennemført hele onboarding-forløbet. Velkommen ombord hos PowerMatch — vi er glade for at have dig på holdet.</p>
+          <div class="recap">
+            <div class="c"><b id="recapSteps">0</b><span>trin gennemført</span></div>
+            <div class="c"><b>7</b><span>faser</span></div>
+            <div class="c"><b id="recapNotes">0</b><span>noter</span></div>
+          </div>
+          <div class="acts">
+            <button class="btn btn-ghost" id="reviewBtn">Gennemgå igen</button>
+            <button class="btn btn-ghost" id="doneNotesBtn">Se mine noter</button>
+            <a class="btn btn-dark" href="https://app.powermatch.dk" target="_blank" rel="noopener">Gå til PowerMatch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER ACTION BAR -->
+    <div class="foot" id="foot">
+      <div class="foot-in">
+        <div class="mini-prog">
+          <span class="n" id="footN">Fase 1 af 7</span>
+          <div class="dots" id="footDots"></div>
+        </div>
+        <div class="acts">
+          <button class="btn btn-ghost" id="prevBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
+            Tilbage
+          </button>
+          <button class="btn btn-primary" id="nextBtn">
+            <span id="nextLabel">Fortsæt</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:210;display:none"></canvas>
+
+<script id="bootstrap" type="application/json">{{ {"phases": phases, "state": state, "limits": limits} | tojson }}</script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+services:
+  onboarding:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: powermatch-onboarding:latest
+    ports:
+      - "8000:8000"
+    environment:
+      PM_APP_NAME: "PowerMatch · Onboarding"
+      PM_DATABASE_URL: "sqlite:////data/onboarding.db"
+    volumes:
+      - onboarding-data:/data
+    restart: unless-stopped
+
+volumes:
+  onboarding-data:

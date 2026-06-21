@@ -1,0 +1,15 @@
+.git
+.gitignore
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+*.db
+*.sqlite3
+.env
+shots/
+verify_ui.py
+*.log
+tests/
